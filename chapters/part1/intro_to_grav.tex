@@ -1,0 +1,105 @@
+\setchapterstyle{kao}
+\setchapterpreamble[u]{\margintoc}
+\chapter{Introduction to Gravity}
+
+\section{Weak and Strong Gravity}
+Gravitation as a force is very weak. Considering the electro-magnetic force, gravitational force is dwarfed.
+
+$$ \frac{F_{grav}}{F_{EM}} \sim 10^{-43} $$
+
+Consider some particle with a Newtonian gravity potential:
+$$ U_{grav} \sum \frac{Gm}{R} \quad v^2 \sim \frac{GM}{r} $$
+
+From this, the following cases can be considered:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+         & $\frac{GM}{R} << 1$ & $\frac{GM}{R} \sim 1$\\ \hline
+        $v<<c$ & Newtonian & see note \\ \hline
+        $v \sim c$ & SR & GR\\
+    \end{tabular}
+    % \caption{Note: The case of strong gravity with slow velocity does not really exists, since to maintain the low velocity, there would be external acceleration required.}
+    \caption{Cases of gravitational potentials}
+    \label{tab:grav_strength}
+\end{table}
+\marginnote{Note: The case of strong gravity with slow velocity does not really exists, since to maintain the low velocity, there would be external acceleration required.}
+
+To illustrate this, consider two contrasting examples.
+
+\subsection{Earth}
+\begin{align*}
+    \frac{GM_\oplus}{R_\oplus c^2} &\overset{\text{SI}}{\sim} \frac{10^{-10} \cdot 10^{24}}{10^7 \cdot 10^{17}} \\ & \sim 10^{-10} << 1 
+\end{align*}
+Thus gravity is very weak in this case, so Newtonian gravity is most applicable in this case.
+
+\subsection{Universe}
+Consider the radius of the universe to be to age of the universe multiplied by the speed of light
+\marginnote{
+$$ R_U \simeq c \times 10^{10} yr \sim 10^{25} m $$
+}
+Mass will be calculated by finding the mass of all stars:
+\marginnote{
+$$ M_{stars} \sim 10^{10} M_\odot \cdot \#galaxy \simeq 10^{53} kg$$}
+The mass of the universe is taken to be around $20$ times the mass of all stars
+\marginnote{$$ M_U \simeq 10^{54} kg $$}
+Using this,
+
+$$ \frac{GM_U}{R_U c^2} \sim \frac{10^{-10} \cdot 10^{54}}{10^{26} \cdot 10^{17}} \sim 1 $$
+Finally, having considered this scale, GR is required to describe this system.
+
+\section{Black Holes}
+Black holes pose multiple questions. The two asked now are:
+\begin{enumerate}
+    \item How fast can a black hole spin?
+    \item What is the maximum charge that a black hole can have on its surface?
+\end{enumerate}
+These will be explored in an order of magnitude method, since black holes are difficult to properly describe.
+\subsection{Max Rotational Velocity}
+Consider the radius of a non-spinning black hole, described by the \textbf{Schwartzchild Radius}, $R_{schw}$, to be a reasonable approximation of the radius of a spinning black hole.
+\marginnote{$R_{schw} = \frac{2 G M}{c^2}$}
+From this, using the centripetal force equation,
+$$ \Omega^2 R = \frac{GM}{R^2} \Rightarrow \Omega^2_{max} \propto M^{-2} $$
+Thus showing an inverse relation to max angular velocity and mass.
+
+\subsection{Max Charge}
+The \textbf{No Hair Theorem} states that black holes can only have properties of mass, spin, and charge. Taking the charge potential then, with the radius to be taken to be approximately the Schwartzchild radius, The maximum charge can be found to be 
+$$ \frac{Q^2}{4 \pi \varepsilon_0 R} \leq \frac{GM^2}{R}  \Rightarrow Q_{max} \sim 10^{20} \; C, \quad \text{for total mass of Universe} $$
+This shows $Q_{max} \propto M^2$. \textbf{How can this be assembled?}
+\marginnote{\href{https://en.wikipedia.org/wiki/No-hair_theorem}{No-Hair Theorem (Wikipedia)}}
+
+
+\section{Quantum Gravity}
+\labsec{quantum grav}
+Since there is no theory of quantum gravity, an order of magnitude argument will be made instead. These arguments are approximate, but align with the actual calculations made in literature. \par Consider some elementary "excitation"/"particle"/"black hole". These are all equivalent since they are considered to be some for of quantum excitation. This excitation has some mass $M$, and radius $R = \frac{2GM}{c^2}$. \par Assuming the excitation is relativistic, the question is then regarding the size of the excitation. Taking Heisenberg's Uncertainty Principle:
+\marginnote{Planck Mass: \begin{align*}
+    M_{Pl} &\sim \left(\frac{hc}{G}\right)^{\frac{1}{2}} \\ & = 2.2 \times 10^{-8} kg
+\end{align*} \newline Planck Length: \begin{align*}
+    \ell_{Pl} & = \left(\frac{hG}{c^3} \right)^{\frac{1}{3}} \\ & = 1.6 \times 10^{-35} \; m 
+\end{align*}}
+$$ \Delta x \sim \frac{h}{\Delta p} \overset{\text{rel.}}{\sim} \frac{h}{Mc}  $$ 
+Taking these two results, for the radius of the excitation and the size of the excitation, 
+$$ \frac{h}{MC} \sim \frac{GM}{c^2} \Rightarrow M \sim \left(\frac{hc}{G}\right)^{\frac{1}{2}} = M_{Pl}$$
+
+\section{Hawking Radiation}
+Continuing on from \vrefsec{quantum grav}, consider the excitation, instead positioned in contact with a thermal bath with temperature $T$. It is also worth considering if this makes sense, that a black hole be in contact with a thermal bath, i.e. that energy is transferred in \textit{and out} of the black hole.
+
+\par As before, consider Heisenberg's Uncertainty Principle, instead this time relating the energy uncertainty. 
+$$ \Delta E \sim \frac{h}{\Delta t} \sim \frac{h}{R_{schw} / c} $$
+Hence  $\Delta t \sim \frac{R_{schw}}{c}$ since this is approximately the orbital period of the black hole. \par These quantum mechanical energy fluctuations must be in equilibrium with the thermal fluctuations of the back, and hence:
+$$ \Rightarrow \Delta E \sim k_B T $$
+\marginnote{Hawking Temperature: $$ T_H = \frac{\hbar c^3}{k_B G M} $$}
+which gives a definition of the temperature of the black hole. Assuming black body radiation via Stephen-Boltzmann
+\begin{align*}
+    \text{Hawking Radiation} & = \sigma \cdot area \cdot T^4 \\ & = \sigma \cdot \left(\frac{GM}{c^2}\right)^2 \cdot \left(\frac{hc^2}{GMk_B}\right)^4
+\end{align*}
+Thus the black hole evaporates. The timeshare of this evaporation is taken as the mass-energy divided by the radiation,
+$$t_{evap} \propto M^3 $$
+
+\subsection{The problem with Entropy (S)}
+\marginnote{1st Law of Thermodynamics: $$dS = \frac{d(\text{heat})}{T}$$}
+By the First Law of Thermodynamics, entropy must increase. In this case, the change in heat is the change in energy\marginnote{
+Note that coefficients were excluded in the result, and with their inclusion
+$$ dS = \frac{dA}{4 \ell_{Pl}^2}, \quad  A = 16 \pi \left(\frac{GM}{c^2}\right)^2 $$}\begin{align*}
+    dS & = d(Mc^2) \times \frac{Gk_B M}{h c^3} \\ & = \frac{k_B}{\ell_{Pl}} d(R^2)
+\end{align*}

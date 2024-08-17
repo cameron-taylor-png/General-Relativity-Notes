@@ -1,0 +1,86 @@
+\setchapterstyle{kao}
+\setchapterpreamble[u]{\margintoc}
+\chapter{Einstein's Equivalence Principle}
+Einstein's Principle of Equivalence contains three elements. These are:
+\begin{enumerate}
+    \item Universality of Free Fall
+    \item Local Lorentz Invariance
+    \item Local Position Invariance
+\end{enumerate}
+\section{Universality of Free fall}
+The trajectory of a freely falling body is independent of its mass and composition. The use of composition also refers to things such as the forces present in the body as it falls, i.e. strong force, EM force, etc. \par An example of experimental support for Universality of Free Fall is the Eötrös-Dicke-Washington experiments. This experiment consisted of two large masses of different materials, aluminium and gold in this case, are placed on a long beam and suspended by a tortion balance. If there were non-universality, there would be an oscillation due to the different effects on the different materials as the earth rotates. This is not observed, and the current limits on this experiment are $$\frac{\Delta g}{g} \leq 10^{-13}, \quad \Delta g = g_{Au} - g_{Al}$$
+\section{Local Lorentz Invariance}
+The result of a \textbf{local}, \textbf{non-gravitational} experiment is independent of the velocity of the local, freely falling frame. \par If this was not restricted to being local, the body would feel tidal forces due to it being in multiple parts of the gravitational field. \par There are multiple experiments that show local lorentz invariance, including:
+\begin{itemize}
+    \item Michelson-Morley Interferometer
+    \item Rossi-Hall Decay of Muon
+    \item Ives-Stillwell Transverse Doppler Shift
+\end{itemize}
+\section{Local Position Invariance}
+The result of a \textbf{local}, \textbf{non-gravitational} experiment is independent of its location, in both space and time.
+\par Some examples are:
+\begin{itemize}
+    \item GPS: GR effects are $46 \; \mu s/\text{day}$, due to gravitational red-shifting
+    \item Cosmological Tests: Fundamental constants appear measurable the same on cosmological scales, although there are very large systematic uncertainties.
+    \item Oklo Natural Fission Reactors: nuclear reaction rates in the past can be inferred from these archaeological records, and appear to be the same as current.
+\end{itemize}
+
+\section{What About Curved Spacetime?}
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}
+\tikzstyle{every node}=[font=\LARGE]
+\draw [ line width=1pt ] (-2,14.5) ellipse (4.25cm and 2.5cm);
+\draw [ fill={rgb,255:red,0; green,140; blue,180} , line width=0.8pt ] (-4,14.5) circle (0.75cm);
+\draw  (8.25,10.25) ellipse (0cm and 0cm);
+\draw [ fill={rgb,255:red,195; green,209; blue,23} , line width=0.9pt ] (-0.25,16.75) circle (0.25cm);
+\draw [->, >=Stealth] (-2,17) -- (-2.25,17);
+\draw [->, >=Stealth] (-2.25,12) -- (-2,12);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-0.25,17.25) -- (-0.5,16.25);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (0,17.25) -- (-0.25,16.25);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (0.25,17.25) -- (0,16.25);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-0.5,17.25) -- (-0.75,16.25);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-0.75,17.25) -- (0.25,17);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-0.75,17) -- (0.25,16.75);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-0.75,16.75) -- (0.25,16.5);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-0.75,16.5) -- (0.25,16.25);
+\draw [ fill={rgb,255:red,195; green,209; blue,23} , line width=0.9pt ] (-6,15.25) circle (0.25cm);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-6,15.75) -- (-6.25,14.75);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-5.75,15.75) -- (-6,14.75);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-5.5,15.75) -- (-5.75,14.75);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-6.25,15.75) -- (-6.5,14.75);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-6.5,15.75) -- (-5.5,15.5);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-6.5,15.5) -- (-5.5,15.25);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-6.5,15.25) -- (-5.5,15);
+\draw [ color={rgb,255:red,96; green,96; blue,96}, line width=0.7pt, short] (-6.5,15) -- (-5.5,14.75);
+\end{circuitikz}
+    \caption{A small object orbiting a very massive object. The grid overlaid represents the straight line of motion that the small object experience in its free falling frame.}
+    \label{fig:curved}
+\end{figure}
+
+Considering the above definitions of Einstein's Equivalence Principle, now consider some object orbiting a much more massive object, as shown in \vref{fig:curved}. This is known experimentally to be true. Consider first the small object. In it's local, non-gravitational frame, it must travel in a straight line, especially since there are no external forces on it. \par Now, considering this object at any other position in its orbit, it is facing the same conditions. So, for the object, it has been travelling in a straight line while it completed the orbit. Therefore, for this to be possible, spacetime must be curved to allow the object to travel in a straight line in its own frame, but complete an orbit in the larger object's frame. \par It is important to note that this is not a thorough or rigorous argument for the curvature of spacetime, but it does suggest that spacetime is curved.
+
+\section{Gravitational Redshift}
+
+Gravitational redshift is the effect of GR effects causing a redshift/blueshift in the wavelengths of light. There will be one real experiment, and one Gedanken (thought) experiment.
+
+\subsection{Pound-Rebka Experiment (1960)}
+Two sources of $Fe^{57}$ are placed at the top and bottom of a clock-tower, with a separation of around 23 meter. These sources emit gamma rays at around $14\;keV$. The top radio source was static, while the bottom radio source was placed on a moving platform. \marginnote{Note that for this experiment, the atomic recoil of the decay would be on the order of $10^{-8} \%$, which would be measurable. Luckily, due to the Mössbauer effect, the iron effectively recoil together, causing the effect to be negligible.}\par If gravitational redshift was seen, it would be expected that the gamma ray from the top source would be blueshifted, and thus would not be absorbed by the lower source. To account for this, the lower source was moved up (to induce kinematic blueshift) or down (to induce kinematic redshift) at a rate to allow for the absorption of the gamma ray into the lower source. 
+
+\subsection{Gedanken Experiment (`cyclic')}
+Consider a ball initially at rest, of mass $M_A$, that is allowed to fall via free fall a height of H. Considering this first case:
+\begin{align*}
+    E_{top} & = M_A c^2 \\ E_{bottom} & = M_A c^2 + M_A g_A H
+\end{align*}
+Now consider a new case where the mass emits a photon with energy $h \nu$ towards a mirror, and all fall in free fall. In this new case
+\begin{align*}
+    E_{top} & = M_B c^2 + h \nu \\ E_{bottom} & = M_B c^2 + M_B g_B H + h \nu'
+\end{align*}
+Note that a new mass of the ball is considered to allow for the photon to be emitted from the ball. There is also no assertion being made yet that the gravitational acceleration is the same in both cases. \par Now, equating the initial and final energies, it can be seen that
+$$ \frac{h \nu' - h \nu}{h \nu} = \frac{H(M_A g_A - M_B g_B)}{(M_A - M_B)c^2} $$
+Under the assumption of the Universality of Free Fall, i.e. $g_A = b_B$, 
+$$ \frac{h \nu' - h \nu}{h \nu} = \frac{g_A H}{c^2} \sim 10^{-15} $$
+which was similar to the value measured in the Pound-Rebka experiment.
+
+% \section{Gravitational Redshift}

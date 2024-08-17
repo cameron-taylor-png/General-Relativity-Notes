@@ -1,0 +1,59 @@
+\setchapterstyle{kao}
+\setchapterpreamble[u]{\margintoc}
+\chapter{Curved Space}
+
+% \section{Manifolds, Local Flatness, and Local Lorentz Invariance}
+% \section{Lengths, Volumes, Divergence, and Gauss' Law}
+
+\section{Fermi-Walker Transport}
+For a spaceship travelling along a trajectory $x^0(\tau), \dots, x^3(\tau)$, let 
+\begin{align*}
+    \vec{u}(\tau) & = \frac{d\vec{x}}{d\tau} && \text{4-Velocity} \\
+    \vec{a}(\tau) & = \nabla_{\vec{u}} \vec{u} && \text{4-Acceleration}
+\end{align*}
+Then the Fermi-Walker transport defined how any geometric object evolves if we put it in a spaceship and drive off with it. i.e. It ensures the only rotation of the spatial basis vectors is due to the proper acceleration of the coordinate system. \par It is defined as the solution to the system of ODEs resulting from
+$$ \nabla_{\vec{u}} \vec{V} = \vec{u}\vec{a} \cdot \vec{V} - \vec{a}\vec{u} \cdot \vec{V} $$
+This is solved given a $\vec{u}$ and $\vec{a}$. \par The properties if this are
+\begin{enumerate}
+    \item $\vec{V} \cdot \vec{V}$ is conserved along the trajectory. Furthermore, orthogonality is conserved. If $\vec{V}$ and $\vec{W}$ are orthogonal initially, then
+    $$ \nabla_{\vec{u}} (\vec{V} \cdot \vec{W}) = 0 $$
+    \item $\vec{u}$ is automatically Fermi-Walker transported. This is useful since $\vec{u}$ is timelike and can form one component of our transported coordinate axes.
+    \item If $\vec{W}$ is spacelike, i.e. orthogonal to $\vec{u}$ and $\vec{a}$, then $\vec{W}$ doesn't evolve (`rotate') along the trajectory. Note, that there is no spatial rotation of $\vec{W}$, but there is a temporal rotation, e.g. two consecutive Lorentz boosts = one boost + one rotation.
+\end{enumerate}
+
+\section{Introduction to Curvature}
+Consider a point $P$ on a curved spacetime. We wish to take the local metric $g_{\alpha\beta}$ and transform it into primed coordinates such that $g_{\mu'\nu'}$ is as flat as possible. \par We know this transformation, and it takes the form
+$$ g_{\mu'\nu'} = \frac{\partial x^\alpha}{\partial x^{\mu'}} \frac{\partial x^\beta}{\partial x^{\nu'}} g_{\alpha \beta} $$
+To consider the individual components of the transformation for different orders, i.e. see where this 'flattening' breaks down, we will take the Taylor expansion of the transformation around the point $P$.
+\subsubsection{$0$th Order}
+The goal here is to achieve Minkowski space, since this is the known $0$th order flat spacetime.
+$$ \eta_{\mu' \nu'} = \frac{\partial x^\alpha}{\partial x^{\mu'}} \frac{\partial x^\beta}{\partial x^{\nu'}} \left. g_{\alpha \beta} \right|_P$$
+We will define $\gvec{\Lambda}{\alpha}{\mu'} = \frac{\partial x^\alpha}{\partial x^{\mu'}}$, such that the above equation is satisfied. Is this possible? Yes, since $\gvec{\Lambda}{\alpha}{\mu'}$ has 16 free independent numbers, and $\eta_{\mu' \nu'}$ has 10 independent constraints. The 6 free degrees of freedom represent the 3 Lorentz boosts, and 3 rotations.
+
+\subsubsection{1st Order}
+Since we have already constrained the 1st order derivatives from the 0th order, there are only the 2nd order derivatives left to consider. 
+$$ \frac{\partial^2 x^\beta}{\partial x^{\nu'} \partial x^{\lambda'}} $$
+contains 40 independent numbers, and 
+$$ g_{\mu' \nu', \lambda'} $$
+contains 40 independent constraints. Thus, we have been successful in the 1st order. The lack of free numbers represents the principle of equivalence, when combined with the 0th order.
+
+\subsubsection{2nd Order}
+Now consider the goal of
+$$ g_{\mu' \nu', \lambda' \gamma'} = 0 $$
+Again, we already constrained the 2nd order derivatives, so now are left to consider the 3rd order, i.e. 
+$$ \frac{\partial^3 x^\beta}{\partial x^{\nu'} \partial x^{\lambda'} \partial x^{\gamma'}} $$
+which has 80 independent components.
+Considering the metric, there are 100 constraint equations, and as such there are 20 irreducible degrees of freedom. These 20 degrees represent the components of curvature in 4D.
+
+\section{Curvature}
+There are two types of curvature
+\begin{description}
+    \item[Extrinsic] -- relies on embedded space, e.g. looking `from the outside' at a beach ball or cylinder.
+    \item[Intrinsic] -- Curvature measured by experiments occurring completely in curved spacetime, e.g. do locally parallel lines converge or diverge?
+\end{description}
+
+% \section{Parallel Transport, Geodesics, and Fermi-Walker Transport}
+% \section{Riemann Curvature Tensor and its Symmetries}
+% \section{Weyl Tensor}
+% \section{Bianchi Identites}
+% \section{Ricci Tensor and Scalar}

@@ -1,0 +1,195 @@
+\setchapterstyle{kao}
+\setchapterpreamble[u]{\margintoc}
+\chapter{Kinematics}
+Kinematics refer to the motion of an object with respect to a given metric.
+\begin{definition}[Displacement]
+    The displacement is defined as
+    $$ ds^2 = g(d\Vec{x}, d\Vec{x}) $$
+\end{definition}
+\section{Events and Intervals}
+\begin{figure}[!ht]
+\centering
+\resizebox{0.6\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+
+\draw [ color={rgb,255:red,122; green,122; blue,122}, , line width=1.2pt](12.5,15.75) to[short] (12.5,7);
+\draw[ color={rgb,255:red,122; green,122; blue,122}, , line width=1.2pt] (20.75,9) to[short] (10.25,9);
+\draw [line width=2pt, short] (19.5,14.75) -- (10.5,7.75);
+\draw [line width=2pt, short] (19.5,8) -- (10.5,14.75);
+\draw [line width=0.9pt, ->, >=Stealth] (18.75,11.25) -- (15.75,11.25)node[pos=0, fill=white]{Event P};
+\draw [ color={rgb,255:red,170; green,121; blue,66} , fill={rgb,255:red,170; green,121; blue,66}, line width=1.5pt ] (14,14.25) circle (0.25cm);
+\draw [ color={rgb,255:red,170; green,121; blue,66} , fill={rgb,255:red,170; green,121; blue,66}, line width=1.5pt ] (19.25,9.75) circle (0.25cm);
+\draw [ color={rgb,255:red,170; green,121; blue,66} , fill={rgb,255:red,170; green,121; blue,66}, line width=1.5pt ] (17.25,13) circle (0.25cm);
+\node [font=\large] at (14.75,14.75) {$Q_1$};
+\node [font=\large] at (18,12.75) {$Q_3$};
+\node [font=\large] at (18.5,9.75) {$Q_2$};
+\end{circuitikz}
+}%
+\label{fig:causality}
+\end{figure}
+The above plot shows the possible types of relations between points and an event that can occur. These are
+\begin{description}
+    \item[$Q_1$] - \textbf{Timelike} relative to $P$, where $ds^2 < 0$, i.e. $Q_1$ can be reached from $P$. Equivalently, there exists a coordinate system where $Q_1$ and $P$ are at the same spatial location, but at different times.
+    \item[$Q_2$] - \textbf{Spacelike} relative to $P$, where $ds^2 > 0$, i.e. $Q_2$ cannot be reached from $P$ in a spaceship. Equivalently, there exists a coordinate system where $P$ and $Q_2$ occur at the same time, but different spatial locations.
+    \item[$Q_3$] - \textbf{Lightlike}, i.e. $Q_3$ will be reached from $P$ by photons. 
+\end{description}
+
+\subsection{Proper Time}
+Proper time is defined as an affine parameter which leads to a particular normalisation of $d\vec{x}$, and hence $ds$.
+\begin{definition}[Proper Time]
+    Proper time is defined as
+    $$ d\tau = \left(-ds^2\right)^{\frac{1}{2}} $$
+    which can also be written as
+    $$ -d\tau^2 = d\vec{x}\cdot d\vec{x} $$
+\end{definition}
+
+\section{4-Velocity and 4-Acceleration}
+Consider a projectile with a path
+$$ x^0(\lambda), \dots, x^3(\lambda) $$
+here parameterised with the affine parameter $\lambda$. We will from now use the affine parameter of \textbf{proper time} to parameterise this path.
+\subsection{4-Velocity}
+\begin{definition}[4-Velocity]
+    4-Velocity is defined along a path with respect to the proper time
+    $$ \vec{u} = \frac{d \vec{x}(\tau)}{d\tau} $$
+    where $d\vec{x}(\tau)$ is the infinitesimal displacement from $\tau$ to $\tau + d\tau$
+    From the property of proper time, there is a normalisation condition of
+    $$ -1 = \vec{u} \cdot \vec{u} $$
+\end{definition}
+It can more clearly be seen here how proper time is simply the parametrisation of the trajectory that allows for this normalisation condition to hold.
+\subsection{Examples of 4-Velocity}
+
+\subsubsection{MCRF: Momentarily Comoving Reference Frame}
+This case is one where the coordinate system is momentarily comoving with the particle, i.e. the particle is momentarily at rest (spatially). This is local. \par
+The coordinates of the object in the MCRF are parameterised with respect to proper time, i.e.
+$$ t(\tau), \dots, z(\tau) $$
+where, from the property of this system
+\begin{align*}
+    u^t & = \frac{dt(\tau)}{d\tau} \neq 0 \\
+    u^x & = \frac{dx(\tau)}{d\tau} = 0
+\end{align*}
+and the same for $u^y$ and $u^z$. \par Hence 
+$$ \vec{u} = (u^t, 0, 0, 0) $$
+where by applying the normalisation condition, without assuming the metric, gives
+$$ -1 = g_{tt} (u^t)^2 $$
+\begin{description}
+    \item[Minkowski] -- $g_{tt} = -1 \Rightarrow u^t = 1$
+    \item[Schwarzchild] -- $g_{tt} = - \left( 1 - \frac{2M}{r}\right) \Rightarrow u^t = \left(\sqrt{1 - \frac{2M}{r}}\right)^{-1} $
+\end{description}
+The interpretation of $u^t$ is that tick separation in the coordinate system compared to the tick separation in proper time.
+
+\subsubsection{Coordinate System in which Particle Moves Instantaneously with Speed $V$ in the $x$ Direction}
+Similarly to before we will set up the velocity components
+\begin{align*}
+    u^t & = \frac{dt(\tau)}{d\tau} \neq 0 \\
+    u^x & = \frac{dx(\tau)}{d\tau} = \frac{dx}{dt}\frac{dt}{d\tau} = Vu^t
+\end{align*}
+Using the normalisation condition
+$$ -1 = (u^t)^2 \left(g_{tt} + 2g_{tx} V + g_{xx} V^2 \right) $$
+Where solving for $u^t$ will give the clock tick ratios.
+\begin{description}
+    \item[Minkowski] -- $u^t = \left(\sqrt{1-V^2}\right)^{-1}$ 
+    \item[Schwartzchild] -- $u^t = \left[1 - \frac{2M}{r} - \frac{V^2}{1- \frac{2M}{r}} \right]^{-1/2}$
+\end{description}
+
+\subsection{4-Acceleration}
+Acceleration can not be taken to be the derivative of velocity with respect to $\tau$, since the curvature `pollutes' the second derivative. Hence, it is taken as the covariant derivative of $\vec{u}$, taken along the $\vec{u}$ itself. This then considers the change of the velocity in the tangent space.
+\begin{definition}[4-Acceleration]
+    The 4-Acceleration is defined as
+    $$ \vec{a} = \nabla_{\vec{u}} \vec{u} $$
+\end{definition}
+
+Note that in free-fall, acceleration is $0$.
+
+\subsection{Orthogonality of $\vec{u}$ and $\vec{a}$}
+In 3D, this is not generally true. However, in 4 dimensions, this holds. \par Begin with the  normalisation property of 4-velocity
+$$ -1 = \vec{u} \cdot \vec{u} $$
+and then take the covariant derivative along $\vec{u}$, $\nabla_{\vec{u}}$, to both sides
+\begin{align*}
+    0 & = \left(\nabla_{\vec{u}} \vec{u}\right) \cdot \vec{u} + \vec{u} \cdot \left(\nabla_{\vec{u}} \vec{u}\right) \\ & = 2\vec{a} \cdot \vec{u}
+\end{align*}
+and hence the orthogonality of 4-velocity and 4-acceleration is arrived at.
+\begin{definition}[Orthogonality of 4-Velocity and 4-Acceleration]
+\label{def:4_orthog}
+    The following property holds in 4-dimensional spacetime
+    $$ \vec{a}\cdot \vec{u} = 0 $$
+\end{definition}
+
+\subsection{Worked Examples}
+\subsubsection{Spaceship hovering at constant radius $r$ above a black hole of mass $M$}
+
+This example will make use of spherical polar coordinates. Since the spaceship is spatially static, the only non-zero component of the 4-velocity is $u^t$
+$$ u^t = \left(1 - \frac{2M}{r}\right)^{-\frac{1}{2}} $$
+which is arrived at via the normalisation requirement and using the Schwartzchild metric. \par
+Now consider the components of $\vec{a}$
+\begin{align*}
+    a^\alpha & = u^\beta \gvec{u}{\alpha}{;\beta} \\
+    & = \frac{dx^\beta}{d\tau} \left(\frac{\partial u^\alpha}{\partial x^\beta} + \gvec{\Gamma}{\alpha}{\gamma \beta} u^\gamma \right) \\
+    & = \frac{du^\alpha}{d\tau} + \gvec{\Gamma}{\alpha}{\gamma \beta} u^\gamma u^\beta
+\end{align*}
+where the jump from line 2 to 3 is done so using the chain rule. \par Since $r$ is constant, $$ \frac{du^t}{d\tau} = 0 $$
+Hence, the only non-zero component of the acceleration is the radial component
+\begin{align*}
+    a^r & = 0 + \gvec{\Gamma}{r}{tt} \left(u^t\right)^2 \\ 
+    & = \frac{M}{r^2} \left(1- \frac{2M}{r}\right) \cdot \left(1 - \frac{2M}{r} \right)^{-1} \\
+    \Rightarrow a^r & = \frac{M}{r^2}
+\end{align*}
+The interesting part of this result is that, compared to the classical Newtonian result, the sign has an opposite positivity, since in this curved spacetime, a free-falling object has zero acceleration, this result shows the acceleration needed to stay out of the well of the black hole.
+
+\subsubsection{Uniform Acceleration in Minkowski Spacetime}
+In this example, a spaceship moves along the x-axis (of global Minkowski spacetime) with constant proper acceleration $g$. \par For constant proper acceleration, define a local coordinate system whose clocks are proper, i.e. moving with the ship, and measure infinitesimal displacement and 4-velocity here, and therefore $\vec{a}$. \par
+Defined this local coordinate as a \textit{momentary comoving reference frame}, as seen earlier, with Minkowski spacetime. \par Since the spaceship is spatially static in this comoving coordinate system
+$$ u^t = 1 \quad u^x = u^y = u^z = 0 $$
+which gives
+$$ \vec{a} = \left(\frac{du^t}{d\tau}, \frac{du^\lambda}{d\tau}, 0, 0\right) $$
+due to the orthogonality of 4-velocity and 4-acceleration, \vref{def:4_orthog}, the first term is $0$. This leaves $a^x$, which is $g$, the proper acceleration. \par
+Note that this is all local, i.e. instantaneous local acceleration and velocity. To then solve for global trajectories, invariant quantities are needed. These, in Minkowski, are
+\begin{align*}
+    -1 & = \vec{u} \cdot \vec{u} \\
+    0 & = \vec{u} \cdot \vec{a} \\
+    g^2 & = \vec{a} \cdot \vec{a}
+\end{align*}
+Then solving for these gives rise to \textbf{Hyperbolic Motion}.
+\begin{corollary}[Hyperbolic Motion]
+    Hyperbolic motion is uniform acceleration in Minkowski spacetime. The path, parameterised by proper time $\tau$ is defined as
+    \begin{align*}
+        t(\tau) & = g^{-1} \sinh(g\tau) \\
+        x(\tau) & = g^{-1} \cosh(g\tau) \\
+        y(\tau) & = z(\tau) = 0
+    \end{align*}
+\end{corollary}
+
+From this derivation of hyperbolic motion, it is obvious to see that a photon launched from $x(0) < 0$ never catches the ship, i.e. the light cone from the origin forms a horizon from the spaceship. \par More generally, if $\vec{a}$ is known along the trajectory, then one can solve for the trajectory. 
+\begin{align*}
+    \vec{a} & = \nabla_{\vec{u}} \vec{u} \\
+    a^\alpha & = \gvec{u}{\alpha}{; \beta} u^\beta \\
+    & = \frac{d u^\alpha}{d\tau} + \gvec{\Gamma}{\alpha}{\beta \gamma} u^\beta u^\gamma
+\end{align*}
+This forms 4 ODEs for components of $\vec{u}$, given the (known) components of the acceleration and the (known) components of the $\Gamma$'s. Note, however, that generally the $\Gamma$'s depend on the coordinate position of the body, so there are 8 ODEs. The above four, and 
+$$ \frac{d x^\alpha(\tau)}{d\tau} = u^\alpha(\tau) $$
+
+\subsubsection{Special Case: Free Fall}
+In free fall, 
+$$ \vec{a} = 0 $$
+Generally, we can do as before, but to make the solution easier, it is also possible to look for constants of the motion. \par Starting from 
+\begin{align*}
+    0 & = \nabla_{\vec{u}} \vec{u} \\
+    0 & = \nabla_{\vec{u}} \Tilde{u}
+\end{align*}
+which are the acceleration in free-fall, and it's associated 1-form result. From here 
+\begin{align*}
+    0 &= u_{\alpha \, ; \beta} u^\beta \\
+    & = \frac{d u_\alpha}{d\tau} - \gvec{\Gamma}{\gamma}{\alpha\beta} u_\gamma u^\beta \\
+    \Rightarrow \frac{d u_\alpha}{d\tau} & = \frac{1}{2} g^{\gamma \lambda} \left(g_{\lambda \alpha, \beta} + g_{\lambda \beta, \alpha} - g_{\alpha \beta, \lambda}\right) u_\gamma u^\beta \\ & = \frac{1}{2} \left(g_{\lambda \alpha, \beta} + g_{\lambda \beta, \alpha} - g_{\alpha \beta, \lambda}\right) u^\lambda u^\beta \\ & = \frac{1}{2}g_{\lambda \beta, \alpha} u^\lambda u^\beta
+\end{align*}
+\marginnote{Note that when there are anti-symmetric tensors multiplied by tensors that are symmetric, i.e. the first and third $g$ terms, they vanish.}
+Which gives the result that $u_\alpha = const.$ if the metric is independent of $x^\alpha$. \par 
+Free-fall is a special case of a more general mechanism called \textbf{parallel transport}. \par
+If $x^0(\tau), \dots, x^3(\tau)$ describes a curve, then we \textbf{parallel transport} any vector, or tensor, $\vec{V}$, along the curve by solving 
+$$ 0 = \nabla_{\vec{u}} \vec{V} $$
+for the components $V^\alpha(\tau)$.
+
+
+
+\section{Physical Measurements}
+For a physical measurement to be meaningful/useful, it must be coordinate independent. Since the components of a geometric object are not coordinate independent, they cannot be directly associated with a physical measurement. \par The aim, therefore, is to express physical observables as contractions of tensors with no free indices left, and therefore making these quantities coordinates independent. \par Furthermore, all physical measurements are local, and so we can express them in local Minkowski coordinate, and then write them as a coordinate independent result. This result would then hold in arbitrary coordinates. Once again, the principle of equivalence has shown itself.
